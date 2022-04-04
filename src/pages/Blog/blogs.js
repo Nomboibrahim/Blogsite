@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 
 function BlogList(){
@@ -8,7 +9,7 @@ function BlogList(){
 
     useEffect(()=>{
         (async ()=>{
-            let res = await fetch("/post.json");
+            let res = await fetch("/posts.json");
             setPosts(await res.json())
         })()
     },[])
@@ -25,7 +26,7 @@ const handleClick =(id)=>{
         {
             post.map((post)=>(
                <div key={post.id} style = {{display: "flex", margin: "20px 0"}}> 
-               <img src={`/image/${post.image}`}
+               <img src={`/images/${post.image}`}
                alt = "" height={200} width={200}/>
 
                <div>

@@ -1,41 +1,29 @@
-import React from 'react'
-import withLayout from './withLayout'
+import { useNavigate } from "react-router-dom";
+import withLayout from "./withLayout";
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <div>
-    <h1>Welcom to my home</h1>
-    <div>
-    <p>This global website presents OFFICIAL weather observations, weather forecasts
-     and climatological information for selected cities supplied by National 
-     Meteorological & Hydrological Services (NMHSs) worldwide.The NMHSs make official
-      weather observations in their respective countries. Links to their official 
-      weather service websites and tourism board/organization are also provided
-       whenever available. Weather icons are shown alongside worded forecasts in this 
-       version to facilitate visual inspection.
+      <div className="banner">
+        <h1> Welcome to my webpage</h1>
+        <p>
+          Exercitation quis est id aute nulla officia excepteur dolore quis
+          laboris.
+        </p>
 
-    </p>
-    <p>This global website presents OFFICIAL weather observations, weather forecasts
-    and climatological information for selected cities supplied by National 
-    Meteorological & Hydrological Services (NMHSs) worldwide.The NMHSs make official
-     weather observations in their respective countries. Links to their official 
-     weather service websites and tourism board/organization are also provided
-      whenever available. Weather icons are shown alongside worded forecasts in this 
-      version to facilitate visual inspection.
-
-   </p>
-   <p>This global website presents OFFICIAL weather observations, weather forecasts
-   and climatological information for selected cities supplied by National 
-   Meteorological & Hydrological Services (NMHSs) worldwide.The NMHSs make official
-    weather observations in their respective countries. Links to their official 
-    weather service websites and tourism board/organization are also provided
-     whenever available. Weather icons are shown alongside worded forecasts in this 
-     version to facilitate visual inspection.
-  </p>
+        <div className="actions-wrap">
+          <button className="btn-outline" onClick={() => navigate("/about")}>
+            About Me
+          </button>
+          <button className="btn-contain" onClick={() => navigate("/blog")}>
+            Read Blogs
+          </button>
+        </div>
+      </div>
     </div>
-
-    </div>
-  )
+  );
 }
 
-export default withLayout(Home)
+export default withLayout(Home);

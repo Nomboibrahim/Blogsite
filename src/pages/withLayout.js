@@ -26,7 +26,7 @@ useEffect(() => {
 
 
     return(
-        <div className='Layout'>
+        <div className= 'Layout'>
         <header className='appbar'>
         <span>Logo</span>
         <div>
